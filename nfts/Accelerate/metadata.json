@@ -1,0 +1,20 @@
+{
+  "name": "Accelerate",
+  "description": "Exclusive weekly NFT for the active early supporters of Black Swan.",
+  "image": "ipfs://bafybeier7z5jqqdr5oc5u54vdqpynmrzbiqcwcchl4yhyqlczu5gqqyv6a",
+  "external_url": "https://blackswan.wtf",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Weekly Exclusive"
+    },
+    {
+      "trait_type": "Points",
+      "value": "100"
+    },
+    {
+      "trait_type": "Transferable",
+      "value": "No"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables */
+    --sidebar-background: 0 0% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14.9%;
+    --sidebar-accent: 0 0% 14.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Playful floating animations for collage */
+  @keyframes bob {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bob2 {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-bob-slow {
+    animation: bob 6s ease-in-out infinite;
+  }
+
+  .animate-bob-slower {
+    animation: bob2 8s ease-in-out infinite;
+  }
+
+  /* Hover tilt micro-interaction */
+  .tilt-hover {
+    transition: transform 250ms ease, filter 250ms ease;
+    will-change: transform;
+  }
+  .tilt-hover:hover {
+    transform: translateY(-6px) rotate(2deg) scale(1.03);
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.35));
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .bg-risk-gradient {
+    @apply bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500;
+  }
+
+  .bg-homepage-gradient {
+    background-image: radial-gradient(
+      ellipse 50% 60% at 50% 100%,
+      rgba(255, 255, 255, 0.15),
+      transparent 80%
+    );
+  }
+
+  /* Custom scrollbar styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #3f3f46;
+    border-radius: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #52525b;
+  }
+}
+
+/* OnchainKit Custom Theme */
+@layer base {
+  .custom-light {
+    /* Font and Shape */
+    --ock-font-family: "Inter", system-ui, sans-serif !important;
+    --ock-border-radius: 8px !important;
+    --ock-border-radius-inner: 6px !important;
+
+    /* Text Colors */
+    --ock-text-inverse: hsl(0 0% 9%) !important;
+    --ock-text-foreground: hsl(0 0% 98%) !important;
+    --ock-text-foreground-muted: hsl(0 0% 63.9%) !important;
+    --ock-text-error: hsl(0 72% 51%) !important;
+    --ock-text-primary: hsl(0 0% 98%) !important;
+    --ock-text-success: hsl(142 76% 36%) !important;
+    --ock-text-warning: hsl(38 92% 50%) !important;
+    --ock-text-disabled: hsl(0 0% 40%) !important;
+
+    /* Background Colors */
+    --ock-bg-default: hsl(0 0% 3.9%) !important;
+    --ock-bg-default-hover: hsl(0 0% 14.9%) !important;
+    --ock-bg-default-active: hsl(0 0% 18%) !important;
+    --ock-bg-alternate: hsl(0 0% 7%) !important;
+    --ock-bg-alternate-hover: hsl(0 0% 10%) !important;
+    --ock-bg-alternate-active: hsl(0 0% 12%) !important;
+    --ock-bg-inverse: hsl(0 0% 98%) !important;
+    --ock-bg-inverse-hover: hsl(0 0% 94%) !important;
+    --ock-bg-inverse-active: hsl(0 0% 89%) !important;
+    --ock-bg-primary: hsl(0 0% 98%) !important;
+    --ock-bg-primary-hover: hsl(0 0% 94%) !important;
+    --ock-bg-primary-active: hsl(0 0% 89%) !important;
+    --ock-bg-primary-washed: hsl(0 0% 14.9%) !important;
+    --ock-bg-primary-disabled: hsl(0 0% 20%) !important;
+    --ock-bg-secondary: rgba(113, 113, 122, 0.6) !important;
+    --ock-bg-secondary-hover: rgba(113, 113, 122, 0.7) !important;
+    --ock-bg-secondary-active: rgba(113, 113, 122, 0.8) !important;
+    --ock-bg-error: hsl(0 62.8% 30.6%) !important;
+    --ock-bg-warning: hsl(38 92% 50%) !important;
+    --ock-bg-success: hsl(142 76% 36%) !important;
+    --ock-bg-default-reverse: hsl(0 0% 98%) !important;
+
+    /* Icon Colors */
+    --ock-icon-color-primary: hsl(0 0% 98%) !important;
+    --ock-icon-color-foreground: hsl(0 0% 98%) !important;
+    --ock-icon-color-foreground-muted: hsl(0 0% 63.9%) !important;
+    --ock-icon-color-inverse: hsl(0 0% 9%) !important;
+    --ock-icon-color-error: hsl(0 72% 51%) !important;
+    --ock-icon-color-success: hsl(142 76% 36%) !important;
+    --ock-icon-color-warning: hsl(38 92% 50%) !important;
+
+    /* Border Colors */
+    --ock-border-line-primary: hsl(0 0% 14.9%) !important;
+    --ock-border-line-default: hsl(0 0% 14.9%) !important;
+    --ock-border-line-heavy: hsl(0 0% 25%) !important;
+    --ock-border-line-inverse: hsl(0 0% 83.1%) !important;
+  }
+
+  .custom-dark {
+    /* Font and Shape */
+    --ock-font-family: "Inter", system-ui, sans-serif !important;
+    --ock-border-radius: 8px !important;
+    --ock-border-radius-inner: 6px !important;
+
+    /* Text Colors */
+    --ock-text-inverse: hsl(0 0% 9%) !important;
+    --ock-text-foreground: hsl(0 0% 98%) !important;
+    --ock-text-foreground-muted: hsl(0 0% 63.9%) !important;
+    --ock-text-error: hsl(0 72% 51%) !important;
+    --ock-text-primary: hsl(0 0% 98%) !important;
+    --ock-text-success: hsl(142 76% 36%) !important;
+    --ock-text-warning: hsl(38 92% 50%) !important;
+    --ock-text-disabled: hsl(0 0% 40%) !important;
+
+    /* Background Colors */
+    --ock-bg-default: hsl(0 0% 3.9%) !important;
+    --ock-bg-default-hover: hsl(0 0% 14.9%) !important;
+    --ock-bg-default-active: hsl(0 0% 18%) !important;
+    --ock-bg-alternate: hsl(0 0% 7%) !important;
+    --ock-bg-alternate-hover: hsl(0 0% 10%) !important;
+    --ock-bg-alternate-active: hsl(0 0% 12%) !important;
+    --ock-bg-inverse: hsl(0 0% 98%) !important;
+    --ock-bg-inverse-hover: hsl(0 0% 94%) !important;
+    --ock-bg-inverse-active: hsl(0 0% 89%) !important;
+    --ock-bg-primary: hsl(0 0% 98%) !important;
+    --ock-bg-primary-hover: hsl(0 0% 94%) !important;
+    --ock-bg-primary-active: hsl(0 0% 89%) !important;
+    --ock-bg-primary-washed: hsl(0 0% 14.9%) !important;
+    --ock-bg-primary-disabled: hsl(0 0% 20%) !important;
+    --ock-bg-secondary: rgba(113, 113, 122, 0.6) !important;
+    --ock-bg-secondary-hover: rgba(113, 113, 122, 0.7) !important;
+    --ock-bg-secondary-active: rgba(113, 113, 122, 0.8) !important;
+    --ock-bg-error: hsl(0 62.8% 30.6%) !important;
+    --ock-bg-warning: hsl(38 92% 50%) !important;
+    --ock-bg-success: hsl(142 76% 36%) !important;
+    --ock-bg-default-reverse: hsl(0 0% 98%) !important;
+
+    /* Icon Colors */
+    --ock-icon-color-primary: hsl(0 0% 98%) !important;
+    --ock-icon-color-foreground: hsl(0 0% 98%) !important;
+    --ock-icon-color-foreground-muted: hsl(0 0% 63.9%) !important;
+    --ock-icon-color-inverse: hsl(0 0% 9%) !important;
+    --ock-icon-color-error: hsl(0 72% 51%) !important;
+    --ock-icon-color-success: hsl(142 76% 36%) !important;
+    --ock-icon-color-warning: hsl(38 92% 50%) !important;
+
+    /* Border Colors */
+    --ock-border-line-primary: hsl(0 0% 14.9%) !important;
+    --ock-border-line-default: hsl(0 0% 14.9%) !important;
+    --ock-border-line-heavy: hsl(0 0% 25%) !important;
+    --ock-border-line-inverse: hsl(0 0% 83.1%) !important;
+  }
+}

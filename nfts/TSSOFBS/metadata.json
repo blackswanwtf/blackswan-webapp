@@ -1,0 +1,28 @@
+{
+  "name": "The Secret Society of the Black Swan",
+  "description": "This NFT gives you 30 days of access to DEGEN tier of Black Swan.",
+  "image": "ipfs://bafybeichc4cvikm6prxewrohlfuimqpqlykgms2dwmozhl2op44ev46izq",
+  "external_url": "https://blackswan.wtf",
+  "attributes": [
+    {
+      "trait_type": "Access Level",
+      "value": "Degen"
+    },
+    {
+      "trait_type": "Duration",
+      "value": "30 Days"
+    },
+    {
+      "trait_type": "Exclusivity",
+      "value": "Limited Edition"
+    },
+    {
+      "trait_type": "Utility",
+      "value": "Platform Access"
+    },
+    {
+      "trait_type": "Transferable",
+      "value": "No"
+    }
+  ]
+}
