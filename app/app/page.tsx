@@ -55,8 +55,8 @@ export default function AppPage() {
   } | null>(null);
 
   // NFT contract address
-  // const CONTRACT_ADDRESS = "0xaD3fBBb0Ca46ee86E9C1178ce3D631e25a99Dee0";
-  const CONTRACT_ADDRESS = "0x724f6E9eaFD25e4Ef8e4529fB092A0A737d56Bee";
+  const CONTRACT_ADDRESS = "0x9198564CF9997Fd0C031c59Fd95CD764d92F1f9a";
+  const NFT_NAME = "Conviction";
 
   // Update the current time every minute
   useEffect(() => {
@@ -289,7 +289,7 @@ export default function AppPage() {
                     </div>
                     <div className="text-left">
                       <p className="text-white font-medium text-sm">
-                        Claim Accelerate NFT
+                        Claim {NFT_NAME} NFTs
                       </p>
                       <p className="text-zinc-400 text-xs">
                         Exclusive for our early supporters. Limited time only.

@@ -25,8 +25,9 @@ interface NFTMintCardProps {
   } | null;
 }
 
-// const CONTRACT_ADDRESS = "0xaD3fBBb0Ca46ee86E9C1178ce3D631e25a99Dee0";
-const CONTRACT_ADDRESS = "0x724f6E9eaFD25e4Ef8e4529fB092A0A737d56Bee";
+// NFT contract address
+const CONTRACT_ADDRESS = "0x9198564CF9997Fd0C031c59Fd95CD764d92F1f9a";
+const NFT_NAME = "Conviction";
 
 export function NFTMintCard({
   onClick,
@@ -125,7 +126,7 @@ export function NFTMintCard({
 
   const handleShare = () => {
     composeCast({
-      text: "Just minted my limited edition Accelerate NFT on Black Swan! 🎉\n\nMint yours to qualify for exclusive early rewards and market insights! 🚀",
+      text: `Just minted my limited edition ${NFT_NAME} NFT on Black Swan! 🎉\n\nMint yours to qualify for exclusive early rewards and market insights! 🚀`,
       embeds: ["https://blackswan.wtf"],
     });
   };
@@ -148,7 +149,7 @@ export function NFTMintCard({
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
           style={{
-            backgroundImage: `url(/avatars/nft/3.png)`,
+            backgroundImage: `url(/avatars/nft/4.png)`,
           }}
         />
         {/* Gradient overlay */}
@@ -157,7 +158,7 @@ export function NFTMintCard({
 
       {/* Status Badge */}
       <div className="absolute top-4 left-4">
-        <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30 hover:bg-yellow-500/30 px-3 py-1">
+        <Badge className="bg-green-500/20 text-green-300 border-green-500/30 hover:bg-green-500/30 px-3 py-1">
           LIMITED EDITION
         </Badge>
       </div>
@@ -177,7 +178,7 @@ export function NFTMintCard({
         <div className="space-y-4">
           {/* NFT Title */}
           <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-            Accelerate NFT
+            {NFT_NAME} NFT
           </h3>
 
           {/* Description */}
